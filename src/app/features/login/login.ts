@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Button } from '../../shared/components/button/button';
-import { Input } from '../../shared/components/input/input';
+import { Button, Input } from 'supernova-ui';
 
 @Component({
   selector: 'app-login',

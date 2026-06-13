@@ -1,4 +1,4 @@
 @import 'tailwindcss';
 
-@import './app/theme/tokens.css';
+@import 'supernova-ui/styles.css';
 @import './app/theme/general.css';

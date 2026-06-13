@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
+    "supernova-ui": "file:supernova-ui-0.0.1.tgz",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
