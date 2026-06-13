@@ -1,0 +1,12 @@
+body {
+  background-color: var(--color-base-100);
+  color: var(--color-content);
+  font-size: var(--text-body);
+
+  input {
+    &::placeholder {
+      font-size: var(--text-body);
+      color: var(--color-muted);
+    }
+  }
+}

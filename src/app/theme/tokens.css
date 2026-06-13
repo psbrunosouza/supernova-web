@@ -1,0 +1,70 @@
+@theme {
+  /* Colors */
+  --color-base-100: #191716;
+  --color-base-200: #22201f;
+  --color-base-300: #2a2625;
+
+  --color-content: #bac1b8;
+  --color-muted: #6b7280;
+
+  --color-primary: #0c7c59;
+  --color-primary-content: #bac1b8;
+
+  --color-accent: #f28123;
+  --color-accent-content: #191716;
+
+  --color-success: #2ec4b6;
+  --color-success-content: #191716;
+
+  --color-warning: #f7b538;
+  --color-warning-content: #191716;
+
+  --color-error: #d81159;
+  --color-error-content: #bac1b8;
+
+  --color-border: #3a3533;
+
+  /* Fonts */
+  --font-primary: Inter, sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
+
+  /* Radius */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Text sizes */
+  --text-title: 1.85rem;
+  --text-subtitle: 1.25rem;
+  --text-body: 1.15rem;
+  --text-caption: 1rem;
+
+  /* Border widths */
+  --border-width-xs: 0.03125rem;
+  --border-width-sm: 0.0625rem;
+  --border-width-md: 0.09375rem;
+  --border-width-lg: 0.125rem;
+  --border-width-xl: 0.15625rem;
+
+  /* Element heights */
+  --height-xs: 3.5rem;
+  --height-sm: 3.75rem;
+  --height-md: 4rem;
+  --height-lg: 4.25rem;
+  --height-xl: 4.5rem;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}

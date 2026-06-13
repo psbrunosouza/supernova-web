@@ -1,0 +1,12 @@
+<div class="lg:grid lg:grid-cols-5 h-full">
+  <div class="lg:col-span-3 bg-primary hidden lg:block"></div>
+  <div
+    [formGroup]="loginForm"
+    class="lg:col-span-2 h-full justify-center items-center p-xl flex flex-col gap-4"
+  >
+    <nova-input label="email" formControlName="email" placeholder="E-mail"> @ </nova-input>
+    <nova-input label="password" placeholder="Senha"></nova-input>
+    <nova-button>acessar</nova-button>
+    <hr class="h-px w-full text-border px-4" />
+  </div>
+</div>
