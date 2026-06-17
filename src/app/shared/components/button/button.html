@@ -1,0 +1,7 @@
+<button (click)="clicked.emit($event)" [class]="buttonVariants()">
+  @if (true) {
+    <ng-content></ng-content>
+  } @else {
+    <div class="loader"></div>
+  }
+</button>

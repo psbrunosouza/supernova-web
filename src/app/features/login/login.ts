@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Button, Input } from 'supernova-ui';
+import { Button } from '../../shared/components/button/button';
+import { InputPassword } from '../../shared/components/input-password/input-password';
+import { Input } from '../../shared/components/input/input';
 
 @Component({
   selector: 'app-login',
-  imports: [Input, ReactiveFormsModule, Button],
+  imports: [Input, ReactiveFormsModule, Button, InputPassword],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -17,7 +19,7 @@ export class Login {
 
   initLoginForm(): void {
     this.loginForm = this.fb.group({
-      email: ['test', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
   }

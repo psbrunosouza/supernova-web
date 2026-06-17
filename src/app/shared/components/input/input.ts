@@ -1,14 +1,13 @@
 import { booleanAttribute, Component, computed, inject, input, signal } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { inputPasswordContainerVariants, inputPasswordVariants } from './input-password.variants';
+import { inputContainerVariants, inputVariants } from './input.variants';
 
 @Component({
-  selector: 'nova-input-password',
-  imports: [],
-  templateUrl: './input-password.html',
-  styleUrl: './input-password.css',
+  selector: 'nova-input',
+  templateUrl: './input.html',
+  styleUrl: './input.css',
 })
-export class InputPassword implements ControlValueAccessor {
+export class Input implements ControlValueAccessor {
   private readonly ngControl = inject(NgControl, {
     self: true,
     optional: true,
@@ -22,17 +21,15 @@ export class InputPassword implements ControlValueAccessor {
     transform: booleanAttribute,
   });
 
-  private formDisabled = signal(false);
+  _disabled = signal(false);
 
   value = signal('');
-
-  isVisible = signal(false);
 
   touched = signal(false);
 
   private readonly validationStateVersion = signal(0);
 
-  isDisabled = computed(() => this.disabled() || this.formDisabled());
+  isDisabled = computed(() => this.disabled() || this._disabled());
 
   invalid = computed(() => {
     this.validationStateVersion();
@@ -53,13 +50,13 @@ export class InputPassword implements ControlValueAccessor {
   });
 
   inputClass = computed(() =>
-    inputPasswordVariants({
+    inputVariants({
       disabled: this.isDisabled(),
     }),
   );
 
   inputContainerClass = computed(() =>
-    inputPasswordContainerVariants({
+    inputContainerVariants({
       state: this.validationState(),
     }),
   );
@@ -86,7 +83,7 @@ export class InputPassword implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.formDisabled.set(isDisabled);
+    this._disabled.set(isDisabled);
   }
 
   handleInput(event: Event): void {
@@ -101,15 +98,6 @@ export class InputPassword implements ControlValueAccessor {
     this.touched.set(true);
     this.onTouched();
     this.refreshValidationState();
-  }
-
-  handleInputVisibility(event: MouseEvent): void {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (this.isDisabled()) return;
-
-    this.isVisible.update((value) => !value);
   }
 
   private refreshValidationState(): void {

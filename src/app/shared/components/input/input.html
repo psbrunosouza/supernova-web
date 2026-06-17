@@ -1,0 +1,21 @@
+<label [class]="inputContainerClass()">
+  <div class="border-r pr-2 border-muted text-muted empty:hidden">
+    <ng-content></ng-content>
+  </div>
+  <div class="flex flex-col justify-center w-full">
+    @if (label()) {
+      <span class="text-xs text-muted">{{ label() }}</span>
+    }
+
+    <input
+      [class]="inputClass()"
+      [value]="value()"
+      [placeholder]="placeholder()"
+      [disabled]="isDisabled()"
+      (input)="handleInput($event)"
+      (blur)="handleBlur()"
+      type="text"
+      name="text"
+    />
+  </div>
+</label>

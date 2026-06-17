@@ -1,0 +1,130 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta title="Components/Button" />
+
+# Button
+
+O `Button` é um componente utilizado para permitir que o usuário execute ações na interface.
+Ele é amplamente utilizado para confirmar ou cancelar ações, enviar formulários, abrir modais e navegar entre etapas de um fluxo.
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <td>
+        <strong>uso</strong>
+      </td>
+      <td>
+        <code>
+          import {'{'} Button {'}'} from "supernova-ui";
+        </code>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+## Uso
+
+### Filled
+
+Use `filled` para ações principais.
+
+<Canvas of={ButtonStories.Filled} sourceState="shown" />
+
+### Outline
+
+Use `outline` para ações secundárias.
+
+<Canvas of={ButtonStories.Outline} sourceState="shown" />
+
+### Ghost
+
+Use `ghost` para ações discretas.
+
+<Canvas of={ButtonStories.Ghost} sourceState="shown" />
+
+### Disabled
+
+Botões desabilitados não permitem interação.
+
+<Canvas of={ButtonStories.Disabled} sourceState="shown" />
+
+### Primary
+
+Use `Primary` como cor principal para exibição de conteúdo
+
+<Canvas of={ButtonStories.Primary} sourceState="shown" />
+
+### Accent
+
+Use `Accent` como cor de destaque para ações secundárias e elementos que precisam chamar atenção sem competir com a ação principal.
+
+<Canvas of={ButtonStories.Accent} sourceState="shown" />
+
+### Success
+
+Use Success para indicar uma ação que resulta em uma operação bem-sucedida ou em um estado positivo.
+
+<Canvas of={ButtonStories.Success} sourceState="shown" />
+
+### Warning
+
+Use Warning para ações que exigem atenção ou podem ter consequências importantes.
+
+<Canvas of={ButtonStories.Warning} sourceState="shown" />
+
+### Error
+
+Use Error para ações destrutivas ou irreversíveis.
+
+<Canvas of={ButtonStories.Error} sourceState="shown" />
+
+## API
+
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>content</strong></td>
+      <td>Conteúdo exibido dentro do botão.</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td><strong>appearance</strong></td>
+      <td>
+        Define a aparência visual do botão.
+        <code>"filled"</code> <code>"outline"</code> <code>"ghost"</code>
+      </td>
+      <td><code>"filled"</code></td>
+    </tr>
+
+    <tr>
+      <td><strong>color</strong></td>
+      <td>
+        Define a cor semântica do botão.
+        <code>"primary"</code> <code>"accent"</code> <code>"success"</code>
+        <code>"warning"</code> <code>"error"</code>
+      </td>
+      <td><code>"primary"</code></td>
+    </tr>
+
+    <tr>
+      <td><strong>disabled</strong></td>
+      <td>
+        Desabilita o botão e impede interação.
+        <code>false</code> <code>true</code>
+      </td>
+      <td><code>false</code></td>
+    </tr>
+
+  </tbody>
+</table>

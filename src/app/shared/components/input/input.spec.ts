@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputPassword } from './input-password';
+import { Input } from './input';
 
 @Component({
-  imports: [ReactiveFormsModule, InputPassword],
+  imports: [ReactiveFormsModule, Input],
   template: `
     <form [formGroup]="form">
-      <nova-input-password
-        formControlName="password"
-        label="Senha"
-        placeholder="Digite sua senha"
-      ></nova-input-password>
+      <nova-input
+        formControlName="email"
+        label="Email"
+        placeholder="Digite seu email"
+      ></nova-input>
     </form>
   `,
 })
@@ -20,12 +20,12 @@ class HostComponent {
 
   constructor(private readonly formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 }
 
-describe('InputPassword', () => {
+describe('Input', () => {
   let fixture: ComponentFixture<HostComponent>;
 
   beforeEach(async () => {
@@ -38,12 +38,8 @@ describe('InputPassword', () => {
     await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(fixture.componentInstance).toBeTruthy();
-  });
-
   it('should show invalid on blur and valid after correcting the value', async () => {
-    const passwordControl = fixture.componentInstance.form.controls.password;
+    const emailControl = fixture.componentInstance.form.controls.email;
     const wrapper: HTMLLabelElement = fixture.nativeElement.querySelector('label');
     const input: HTMLInputElement = fixture.nativeElement.querySelector('input');
 
@@ -53,12 +49,12 @@ describe('InputPassword', () => {
 
     expect(wrapper.className).toContain('ring-error');
 
-    input.value = '123456';
+    input.value = 'user@example.com';
     input.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     await fixture.whenStable();
 
-    expect(passwordControl.valid).toBe(true);
+    expect(emailControl.valid).toBe(true);
     expect(wrapper.className).not.toContain('ring-error');
     expect(wrapper.className).toContain('ring-success');
   });

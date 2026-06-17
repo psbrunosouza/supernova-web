@@ -1,0 +1,98 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as InputStories from './input.stories';
+
+<Meta title="Components/Input" />
+
+# Input
+
+O `Input` e um componente utilizado para capturar texto em formularios.
+Ele exibe um label, suporta placeholder, estado desabilitado e conteudo projetado para prefixos ou icones de apoio.
+
+<table style={{ width: '100%' }}>
+  <tbody>
+    <tr>
+      <td>
+        <strong>uso</strong>
+      </td>
+      <td>
+        <code>
+          import {'{'} Input {'}'} from "supernova-ui";
+        </code>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Uso
+
+### Default
+
+Use para capturar texto em campos simples do formulario.
+
+<Canvas of={InputStories.Default} sourceState="shown" />
+
+### With Prefix
+
+Use conteudo projetado para adicionar prefixos ou icones sem alterar o valor digitado.
+
+<Canvas of={InputStories.WithPrefix} sourceState="shown" />
+
+### With Value
+
+Use com `ngModel` quando o campo precisar refletir um valor controlado pelo formulario.
+
+<Canvas of={InputStories.WithValue} sourceState="shown" />
+
+### Disabled
+
+Campos desabilitados permanecem visiveis, mas nao permitem interacao.
+
+<Canvas of={InputStories.Disabled} sourceState="shown" />
+
+## API
+
+<table style={{ width: '100%' }}>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>label</strong></td>
+      <td>Texto exibido acima do valor do campo.</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td><strong>placeholder</strong></td>
+      <td>Texto de apoio exibido quando o campo esta vazio.</td>
+      <td>-</td>
+    </tr>
+
+    <tr>
+      <td><strong>disabled</strong></td>
+      <td>
+        Desabilita o campo e impede interacao.
+        <code>false</code> <code>true</code>
+      </td>
+      <td><code>false</code></td>
+    </tr>
+
+    <tr>
+      <td><strong>ngModel</strong></td>
+      <td>Permite controlar e observar o valor digitado via formularios Angular.</td>
+      <td><code>""</code></td>
+    </tr>
+
+    <tr>
+      <td><strong>ng-content</strong></td>
+      <td>Area opcional para prefixos ou icones exibidos antes do campo.</td>
+      <td>-</td>
+    </tr>
+
+  </tbody>
+</table>
